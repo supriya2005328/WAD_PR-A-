@@ -1,0 +1,128 @@
+body{
+    background:#f4f6f9;
+    font-family:Arial, sans-serif;
+}
+
+/* SIDEBAR */
+.sidebar{
+    min-height:100vh;
+    background:linear-gradient(to bottom,#607799,#7298d1);
+}
+
+.sidebar .nav-link{
+    color:white;
+    padding:12px 20px;
+    transition:0.3s;
+}
+
+.sidebar .nav-link:hover{
+    background:rgba(255,255,255,0.2);
+    padding-left:28px;
+}
+
+.sidebar .active{
+    background:rgba(255,255,255,0.3);
+}
+
+/* CARDS */
+.stat-card{
+    border:none;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+    text-align:center;
+}
+
+.stat-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.stat-icon{
+    font-size:30px;
+    color:#0d6efd;
+    margin-bottom:10px;
+}
+
+/* GRAPH CARD */
+.graph-card{
+    border:none;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+
+/* BAR GRAPH */
+.bar-graph{
+    height:300px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-around;
+}
+
+.bar-box{
+    width:70px;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
+}
+
+.bar-fill{
+    width:50px;
+    background:linear-gradient(to top,#0d6efd,#66a3ff);
+    border-radius:10px 10px 0 0;
+    transition:0.3s;
+}
+
+
+
+.bar-box span{
+    margin-top:10px;
+}
+
+/* PIE CHART */
+.pie-section{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    flex-wrap:wrap;
+}
+
+.pie-chart{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:conic-gradient(
+        #0d6efd 0% 70%,
+        #dc3545 70% 90%,
+        #ffc107 90% 100%
+    );
+    transition:0.4s;
+}
+
+
+.pie-info span{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    margin-right:8px;
+}
+
+.pass{ background:#0d6efd; }
+.fail{ background:#dc3545; }
+.absent{ background:#ffc107; }
+
+/* MOBILE */
+@media(max-width:768px){
+    .sidebar{
+        min-height:auto;
+    }
+
+    .bar-graph{
+        height:220px;
+    }
+}
