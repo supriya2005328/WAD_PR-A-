@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Admin Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .sidebar {
+            height: 100vh;
+            background-color: #343a40;
+            color: white;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background-color: #495057;
+        }
+
+        .card {
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container-fluid">
+<div class="row">
+
+    <!-- Sidebar -->
+    <div class="col-md-3 col-lg-2 sidebar p-3">
+        <h4>Admin</h4>
+        <a href="#">Dashboard</a>
+        <a href="#">Students</a>
+        <a href="#">Teachers</a>
+        <a href="#">Courses</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="col-md-9 col-lg-10 p-4">
+
+        <h3>College Dashboard</h3>
+
+        <!-- Cards -->
+        <div class="row mt-3">
+
+            <div class="col-md-4 mb-3">
+                <div class="card bg-primary text-white p-3">
+                    <h6>Total Students</h6>
+                    <h4>1200</h4>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card bg-success text-white p-3">
+                    <h6>Total Teachers</h6>
+                    <h4>75</h4>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card bg-warning text-white p-3">
+                    <h6>Courses</h6>
+                    <h4>25</h4>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Charts -->
+        <div class="row mt-4">
+
+            <!-- Line Chart -->
+            <div class="col-md-8">
+                <div class="card p-3">
+                    <h6>Student Admissions Trend</h6>
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="col-md-4">
+                <div class="card p-3">
+                    <h6>Students by Department</h6>
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<script>
+// Line Chart (Admissions)
+new Chart(document.getElementById("lineChart"), {
+    type: 'line',
+    data: {
+        labels: ['Jan','Feb','Mar'],
+        datasets: [{
+            label: 'Admissions',
+            data: [40, 20, 70],
+            borderColor: 'blue',
+            fill: false
+        }]
+    }
+});
+
+// Pie Chart (Departments)
+new Chart(document.getElementById("pieChart"), {
+    type: 'doughnut',
+    data: {
+        labels: ['IT','CS','ENTC'],
+        datasets: [{
+            data: [500, 400, 300],
+            backgroundColor: ['blue','green','orange']
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
